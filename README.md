@@ -66,7 +66,7 @@ the HTML language array in **lang/html.js** is a good, simple example. This is t
 
 Each scope member of the array allows a `ch` array, listing each child scope reachable in the order they should be evaluated.
 
-In a simple definition like this named members are not required, but you may use json notation to give names to the scope levels, and reference them by name in `ch` as some definitions do.
+In a simple definition like this named members are not required, but you may give names to the scope levels, and reference them by name in `ch` as some definitions do.
 
 ## Scope Level Properties
 
@@ -81,7 +81,7 @@ Every one of these properties is optional, but you will need to use some for a s
 * `os` = `""||[]` ... String (or array of strings) that open this scope level when found.
 * `nd` = `""||[]` ... String (or array of strings) that terminate this scope level (inclusive).
 * `cx` = `""` ... String of any characters that this scope will terminate *before* reaching.
-* `lm` = `1` ... Character limit for scope. `os` is allowed to violate this.
+* `lm` = `1` ... Character limit for scope. `os` is allowed to violate this, but will close the term.
 * `id` = `[[]]` ... Library of terms sorted into categories that match on completion. (identifiers)
 * `ib` = `[[]]` ... Library of terms sorted into categories that match on each character added. (instantly breaking)
 * `pi` = `fn{}` ... Function to execute prior to identifier matches to groom terms.
@@ -152,5 +152,17 @@ If you made the `ib` property a function, the form is the same, but the function
 ```
 
 This is like the `id` callback, but only for a specific category in an `id` or `ib` library. Once one of the matches is made, the callback gets run on the target element with the completed term *instead of* applying classes or styles from a string. Callbacks like this let you add *reflection* and other goodies to a language spec.
+
+### Pre-Identifer Match Callback
+
+```javascript
+	pi: function(e){
+		e.textContent = e.textContent.toLowerCase();
+	}
+```
+
+Another property, `pi`, is only used as a callback function. When this property is used in a scope, the function will be run *prior to* identifier matches being checked. This lets you do pre-filtering of patterns to reduce match count, or implementation of case insensitivity, as depicted.
+
+
 
 
