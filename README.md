@@ -54,7 +54,7 @@ The named members of HSYN for each language are themselves named or numbered arr
 the HTML language array in **lang/html.js** is a good, simple example. This is the full contents of the `HSYN["HTML"]` language array...
 
 ```javascript:
-/* 0. TOP        */{ cx:0, ch:[1,2] },
+/* 0. TOP        */{ ch:[1,2] },
 /* 1. ENTITY     */{ cl:'ents', os:'&', nd:';', cx:' \r\n\t' },
 /* 2. TAGSPACE   */{ cl:'tags', os:'<', nd:'>', ch: [3,4,5,6] },
 /* 3. ATTRIBUTES */{ cl:'attrs', oc:' ', cx:'=>/"\'' },
