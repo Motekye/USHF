@@ -7,8 +7,8 @@ HTML, CSS, JavaScript, PHP
 
 ## TODO:
 
-* Written many years ago, should be updated as object with state instead of local functions.
-* Object with state will also facilitate usage for a web based editor.
+* Written many years ago, should be updated as object with state instead of nested functions.
+* Object with state will also facilitate usage in a web based editor.
 * Perform benchmarking and optimization of matches.
 * Add regular expression matches, although it seems to get along without.
 * Flush out terms in CSS, JS, PHP definitions.
@@ -73,7 +73,7 @@ In a simple definition like this named members are not required, but you may giv
 Every one of these properties is optional, but you will need to use some for a scope to be reachable / leaveable.
 
 * `ch` = `[]` ... Array of child scopes by named or numbered index.
-* `tg` = `""` ... Scope should build this HTML tag name for term, or <span> if unspecified.
+* `tg` = `""` ... Scope should build this HTML tag name for term, or `<span>` if unspecified.
 * `cl` = `""` ... Apply this "class" attribute to the element created.
 * `st` = `""` ... String to fill in "style" attribute of element.
 * `oc` = `""` ... String of any characters that open this scope level when found.
@@ -86,7 +86,9 @@ Every one of these properties is optional, but you will need to use some for a s
 * `ib` = `[[]]` ... Library of terms sorted into categories that match on each character added. (instantly breaking)
 * `pi` = `fn{}` ... Function to execute prior to identifier matches to groom terms.
 
-When a scope ends by `cx`, the match will propagate up the parent levels if they also have the character in `cx`. Many scope levels can be ended at once like this.
+When a scope ends by `cx`, the match will propagate up the parent levels if they also have the character in `cx`. Many scope levels can be ended at once like this. Likewise, for characters not found in `cp`, or if the parent's `lm` has been broken after leaving the child scope.
+
+In contrast, the `nd` enders are *inclusive* and will be absorbed by the term.
 
 ## Identifier Match Libraries
 
