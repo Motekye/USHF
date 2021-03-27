@@ -1,6 +1,6 @@
-Universal Syntax Highlighting Function
+# Universal Syntax Highlighting Function
 
-The function itself is miniscule, only **1767 bytes** minified. (ushf-min.js)
+The function itself is miniscule, only **1767 bytes** minified. (**ushf-min.js**)
 The language definitions are also quite brief, they are stored in **lang/**.
 Styles are available for the languages defined in **style/**,
 Though many languages are lumped into a handful of CSS files as they are so
