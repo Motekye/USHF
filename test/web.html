@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="en-ca" />
+
+
+		<title>USHF - testing web stack languages</title>
+
+
+<script type="text/javascript" src="../ushf-min.js"></script>
+
+<script type="text/javascript" src="../lang/html.js"></script>
+<script type="text/javascript" src="../lang/js.js"></script>
+<script type="text/javascript" src="../lang/css.js"></script>
+<script type="text/javascript" src="../lang/php.js"></script>
+
+<script type="text/javascript">
+	/*
+	 *	Run highlight() on every <code> block on the page.
+	*/
+	function highlight_all () {
+		var i, n, e = document.getElementsByTagName('code');
+		for (i=0; i<e.length; i++) {
+			/*
+			 *	Split language and scope level.
+			 *	Apply highlighting...
+			*/
+			n = e[i].getAttribute("lang").split(':');
+			highlight(
+				e[i],
+				n[0].toUpperCase(),
+				n[1]?n[1]:0
+			);
+			/*
+			 *	If there was a :N level, it must be cropped
+			 *	from the lang attribute so it will be 
+			 *	recognized in the stylesheet as belonging
+			 *	to the base language.
+			*/
+			if (n[1]) { e[i].setAttribute('lang', n[0]); }
+		}
+	}
+</script>
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="../style/web.css" />
+
+
+<style type="text/css">
+
+/*
+ *			GENERAL PAGE STYLES AND BLOCKS...
+*/
+
+body {
+	background-color:#CCC;
+}
+
+content{
+	display:block;
+	width:600px;
+	margin:5em auto 10em auto;
+}
+
+h1 {
+	font-size:20px;
+	text-align:center;
+}
+
+p, h2, code {
+	margin:2em 0 0 0;
+}
+
+h2 {
+	font-size:20px;
+}
+
+code {
+	display:block;
+	font-size:13px;
+	border:1px solid #888;
+	padding:32px;
+	line-height:2em;
+	background-color:#000;
+	color:#CCC;
+	font-family:monospace;
+	white-space:pre;
+}
+
+</style>
+
+
+</head>
+<body onload="highlight_all();">
+<content>
+
+<h1>Universal Syntax Highlighting Function</h1>
+
+<p>Testing for common web stack languages. These samples are highlighted by the function. View source to see more.<p>
+
+<hr/>
+
+
+
+<h2>Testing: <b>HTML</b> language definition...</h2>
+
+<code lang="html">&lt;p class="testing"&gt;
+Testing some &lt;i&gt;different&lt;/i&gt; tags &amp;amp; other features of HTML.
+&lt;/p&gt;
+&lt;!-- like comments. --&gt;
+&lt;!CDATA[ ...... ]&gt;
+</code>
+
+
+
+<h2>Testing: <b>JS</b> language definition...</h2>
+
+<code lang="js">(function(){
+	// trying out some javascript:
+	var first = arguments[0] || null;
+	if (typeof first == 'string') {
+		return 0;
+	} else {
+		return 1;
+	}
+});
+</code>
+
+
+
+<h2>Testing: <b>PHP</b> language definition...</h2>
+
+<code lang="php">&lt;p&gt;&lt;?php
+	// trying out some PHP code...
+	echo &lt;&lt;&lt;EOT
+PHP opens in HTML scope. See ${lang[0]} for details.
+Also check out $other_thing as well.
+EOT;
+?&gt;&lt;/p&gt;
+</code>
+
+<p>This highlighting definition is not reflective and only 
+recognizes <b>EOT</b> as the heredoc demarcator.</p>
+
+<p>PHP begins in HTML scope and <i>index: 0-7</i> is just a copy of the 
+HTML definition. You may begin in a specific scope of a language as well,
+not just level [0]. This test uses : to indicate a scope to
+enter at in the <i>lang</i> attribute. PHP highlighting
+begins in earnest at level [8] so use <b>lang="php:8"</b>...</p>
+
+<code lang="php:8">/* trying out more PHP code... */
+if (function_exists ("some_func")) {
+	call_user_func ("some_func", ($var + 30 * 144));
+}
+</code>
+
+
+
+<h2>Testing: <b>CSS</b> language definition...</h2>
+
+<p>Using the styles defined on this page for HTML highlighting.</p>
+
+<code lang="css">code[lang="html"]{ background-color:#135; }
+code[lang="html"] .ents{ color:#4D8; }
+code[lang="html"] .tags{ color:#08F; }
+code[lang="html"] .attrs{ color:#88F; }
+code[lang="html"] .quote{ color:#3A3; }
+code[lang="html"] .dtd{ color:#48A; }
+code[lang="html"] .comm{ color:#48A; }
+</code>
+
+
+
+<h2>Testing: <b>JS</b> Invocation...</h2>
+
+<p>Here's the function that grooms these &lt;code&gt; blocks...</p>
+
+<code lang="js">/*
+ *	Run highlight() on every &lt;code&gt; block on the page.
+*/
+function highlight_all () {
+	var i, n, e = document.getElementsByTagName('code');
+	for (i=0; i&lt;e.length; i++) {
+		/*
+		 *	Split language and scope level.
+		 *	Apply highlighting...
+		*/
+		n = e[i].getAttribute("lang").split(':');
+		highlight(
+			e[i],
+			n[0].toUpperCase(),
+			n[1]?n[1]:0
+		);
+		/*
+		 *	If there was a :N level, it must be cropped
+		 *	from the lang attribute so it will be 
+		 *	recognized in the stylesheet as belonging
+		 *	to the base language.
+		*/
+		if (n[1]) { e[i].setAttribute('lang', n[0]); }
+	}
+}</code>
+
+<p>Different usages of <i>highlight ()</i> may vary.
+The example above is in the source of this page and is only one usage.</p>
+
+
+
+</content>
+</body>
+</html>
