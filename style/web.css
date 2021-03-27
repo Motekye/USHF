@@ -1,0 +1,63 @@
+
+/*
+ *			STYLES FOR WEB LANGUAGES:  HTML, JS, CSS, PHP...
+*/
+
+code[lang="html"]{ background-color:#135; }
+code[lang="html"] .ents{ color:#4D8; }
+code[lang="html"] .tags{ color:#08F; }
+code[lang="html"] .attrs{ color:#88F; }
+code[lang="html"] .quote{ color:#3A3; }
+code[lang="html"] .dtd{ color:#48A; }
+code[lang="html"] .comm{ color:#48A; }
+
+code[lang="js"]{ background-color:#024; }
+code[lang="js"] .nums{ color:#F70; }
+code[lang="js"] .quote{ color:#3A3; }
+code[lang="js"] .escp{ color:#9A9; }
+code[lang="js"] .comm{ color:#77D; }
+code[lang="js"] .word{ color:#FF6; }
+code[lang="js"] .keyw{ color:#DA5; }
+code[lang="js"] .null{ color:#F44; text-shadow:1px 1px #800; }
+code[lang="js"] .true{ color:#3F3; text-shadow:1px 1px #080; }
+code[lang="js"] .term{ color:#FA8; }
+
+code[lang="css"]{ background-color:#234; }
+code[lang="css"] .tagn{ color:#FA8; }
+code[lang="css"] .quote{ color:#3A3; }
+code[lang="css"] .comm{ color:#66C; }
+code[lang="css"] .prop{ color:#F00; }
+code[lang="css"] .boxm{ color:#D93; }
+code[lang="css"] .typo{ color:#F96; }
+code[lang="css"] .css3{ color:#9D6; }
+code[lang="css"] .vkey{ color:#6CF; }
+code[lang="css"] .skey{ color:#F63; }
+code[lang="css"] .impt{ color:#F93; text-shadow:2px 2px #800; }
+code[lang="css"] .unit{ color:#66F; }
+code[lang="css"] .nums{ color:#DDF; }
+code[lang="css"] .hexc{ color:#FFF; text-shadow:0 2px #000; font-weight:bold; }
+
+code[lang="php"]{ background-color:#204; }
+code[lang="php"] .ents{ color:#4D8; }
+code[lang="php"] .tags{ color:#08F; }
+code[lang="php"] .attrs{ color:#88F; }
+code[lang="php"] .quote{ color:#3A3; }
+code[lang="php"] .dtd{ color:#48A; }
+code[lang="php"] .comm{ color:#48A; }
+code[lang="php"] .php{ color:#ECA; }
+code[lang="php"] .nums{ color:#F70; }
+code[lang="php"] .escp{ color:#9A9; }
+code[lang="php"] .vars{ color:#89B; }
+code[lang="php"] .supr{ color:#8BB; }
+code[lang="php"] .keyw{ color:#B80; }
+code[lang="php"] .true{ color:#3F3; text-shadow:1px 1px #080; }
+code[lang="php"] .null{ color:#F44; text-shadow:1px 1px #800; }
+code[lang="php"] .func{ color:#FD4; }
+code[lang="php"] .arry{ color:#8DF; }
+code[lang="php"] .meta{ color:#FDD; }
+code[lang="php"] .file{ color:#FD8; }
+code[lang="php"] .gdfn{ color:#DDF; }
+
+/****************************************************************************/
+
+/*		https://github.com/Motekye/USHF		Universal Syntax Highlighting       */
