@@ -22,9 +22,9 @@ Styles are available for the languages defined in **style/**,
 Though many languages are lumped into a handful of CSS files as they are so
 small.
 
-## Using highight ()
+## Using highlight ()
 
-The definitions are currently stored in **HSYN** named after their file extensions in uppercase.
+The definitions are currently stored in **HSYN**, named after their file extensions in uppercase.
 The highlight function will fetch from this array using the named key provided.
 
 ```javascript:
@@ -66,22 +66,24 @@ the HTML language array in **lang/html.js** is a good, simple example. This is t
 
 Each scope member of the array allows a `ch` array, listing each child scope reachable in the order they should be evaluated.
 
-In a simple definition like this named members are not required, but you may use json notation to give names to the scope levels and reference them by name in `ch` a some definitions do.
+In a simple definition like this named members are not required, but you may use json notation to give names to the scope levels, and reference them by name in `ch` as some definitions do.
 
 ## Scope Level Properties
 
-* `ch` = [] ... Array of child scopes by named or numbered index.
-* `tg` = "" ... Scope should build this HTML tag name for term, or <span> if unspecified.
-* `cl` = "" ... Apply this "class" attribute to the element created.
-* `st` = "" ... String to fill in "style" attribute of element.
-* `oc` = "" ... String of any characters that open this scope level when found.
-* `os` = ""||[] ... String (or array of strings) that open this scope level when found.
-* `nd` = ""||[] ... String (or array of strings) that terminate this scope level (inclusive).
-* `cx` = "" ... String of any characters that this scope will terminate *before* reaching.
-* `lm` = 1 ... Character limit for scope. `os` is allowed to violate this.
-* `id` = [[]] ... Library of terms sorted into categories that match on completion.
-* `ib` = [[]] ... Library of terms sorted into categories that match on each character added.
-* `pi` = fn{} ... Function to execute prior to identifier matches to groom terms.
+* `ch` = `[]` ... Array of child scopes by named or numbered index.
+* `tg` = `""` ... Scope should build this HTML tag name for term, or <span> if unspecified.
+* `cl` = `""` ... Apply this "class" attribute to the element created.
+* `st` = `""` ... String to fill in "style" attribute of element.
+* `oc` = `""` ... String of any characters that open this scope level when found.
+* `os` = `""||[]` ... String (or array of strings) that open this scope level when found.
+* `nd` = `""||[]` ... String (or array of strings) that terminate this scope level (inclusive).
+* `cx` = `""` ... String of any characters that this scope will terminate *before* reaching.
+* `lm` = `1` ... Character limit for scope. `os` is allowed to violate this.
+* `id` = `[[]]` ... Library of terms sorted into categories that match on completion.
+* `ib` = `[[]]` ... Library of terms sorted into categories that match on each character added.
+* `pi` = `fn{}` ... Function to execute prior to identifier matches to groom terms.
+
+## Identifier Match Libraries
 
 
 
