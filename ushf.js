@@ -207,4 +207,3 @@ function highlight( e, z, y ){ z = HSYN[z];
 /****************************************************************************/
 
 //		https://github.com/Motekye/USHF		Universal Syntax Highlighting
-
