@@ -32,6 +32,7 @@ highlight (
   element,
   "HTML"
 );
+```
 
 Providing a third argument allows you to select precisely which scope of the language you want to begin inside of. 
 
@@ -44,4 +45,5 @@ highlight (
   "PHP",
   8
 );
+```
 
