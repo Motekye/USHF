@@ -31,7 +31,7 @@ function highlight( e, z, y ){ z = HSYN[z];
     ty = function(v,d){ 
 		return ((typeof v).charAt(0)==d); 
 	},
-
+		
     // enter into a new scope level, child tag of the current:
     to = function(n){
 		l = n; 					// name of the current level
