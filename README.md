@@ -1,6 +1,6 @@
 # Universal Syntax Highlighting Function
 
-The function itself is miniscule, only **1767 bytes** minified. (**ushf-min.js**)
+The function itself is miniscule, only **1769 bytes** minified. (**ushf-min.js**)
 The language definitions are also quite brief, they are stored in **lang/**.
 Styles are available for the languages defined in **style/**,
 Though many languages are lumped into a handful of CSS files as they are so
@@ -156,11 +156,11 @@ This is like the `id` callback, but only for a specific category in an `id` or `
 
 ```javascript
 	pi: function(e){
-		e.textContent = e.textContent.toLowerCase();
+		return e.textContent.toLowerCase();
 	}
 ```
 
-Another property, `pi`, is only used as a callback function. When this property is used in a scope, the function will be run *prior to* identifier matches being checked. This lets you do pre-filtering of patterns to reduce match count, or implementation of case insensitivity, as depicted.
+Another property, `pi`, is only used as a callback function. When this property is used in a scope, the function will be run *prior to* identifier matches being checked and return the *translated string* to be checked against the library. This lets you do pre-filtering of patterns to reduce match count, or implementation of case insensitivity, as depicted. 
 
 
 
